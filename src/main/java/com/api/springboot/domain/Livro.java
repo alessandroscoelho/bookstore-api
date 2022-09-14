@@ -1,14 +1,27 @@
 package com.api.springboot.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import org.hibernate.annotations.ManyToAny;
 
-public class Livro {
+@Entity
+public class Livro implements Serializable{
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String titulo;
 	private String nome_autor;
 	private String texto;
 
+	@ManyToAny
+	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 
 	public Livro() {
