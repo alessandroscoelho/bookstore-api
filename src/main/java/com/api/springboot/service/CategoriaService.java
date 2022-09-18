@@ -8,6 +8,7 @@ import com.api.springboot.domain.Categoria;
 import com.api.springboot.dtos.CategoriaDTO;
 import com.api.springboot.exceptions.ObjectNotFoundExceptions;
 import com.api.springboot.repository.CategoriaRepository;
+import com.api.springboot.resources.exceptions.DataIntegratyViolationException;
 
 @Service
 public class CategoriaService {
@@ -40,7 +41,12 @@ public class CategoriaService {
 
 	public void delete(Integer id) {
 		findById(id);
-		categoriaRepository.deleteById(id);
+			categoriaRepository.deleteById(id);
+		try {
+
+		} catch (DataIntegratyViolationException e) {
+			throw new com.api.springboot.resources.exceptions.DataIntegratyViolationException("Categoria não pode ser DELETADA, possui livros associados.");
+		}
 
 	}
 }

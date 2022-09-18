@@ -25,13 +25,12 @@ public class DBService {
 //		
 //		Livro l1 = new Livro(null, "Clean code", "Robert Martin", "Loren ipsum", cat1);
 //		Livro l2 = new Livro(null, "O mundo de Bob", "Autor desconhecido", "Loren ipsum", cat2);
-		
+//		
 //		cat1.getLivros().addAll(Arrays.asList(l1));
 //		cat2.getLivros().addAll(Arrays.asList(l2));
-
 //		categoriaRepository.saveAll(Arrays.asList(cat1));
 //		livroRepository.saveAll(Arrays.asList(l1));
-		
+//		
 //		categoriaRepository.saveAll(Arrays.asList(cat2));
 //		livroRepository.saveAll(Arrays.asList(l2));
 
