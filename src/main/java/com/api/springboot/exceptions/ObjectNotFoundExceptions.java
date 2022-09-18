@@ -1,6 +1,5 @@
 package com.api.springboot.exceptions;
 
-
 public class ObjectNotFoundExceptions extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
