@@ -41,11 +41,12 @@ public class CategoriaService {
 
 	public void delete(Integer id) {
 		findById(id);
-			categoriaRepository.deleteById(id);
-		try {
 
+		try {
+			categoriaRepository.deleteById(id);
 		} catch (DataIntegratyViolationException e) {
-			throw new com.api.springboot.resources.exceptions.DataIntegratyViolationException("Categoria não pode ser DELETADA, possui livros associados.");
+			throw new com.api.springboot.resources.exceptions.DataIntegratyViolationException(
+					"Categoria não pode ser DELETADA, possui livros associados.");
 		}
 
 	}
