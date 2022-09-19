@@ -8,17 +8,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Livro implements Serializable{
+public class Livro implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+	@NotEmpty(message = "O campo TITULO não deve ser vazio.")
+	@Length(min = 10, max = 100, message = "O campo TITULO deve conter entre 10 e 100 catacteres.")
 	private String titulo;
+	
+	@NotEmpty(message = "O campo NOME DO AUTOR não deve ser vazio.")
+	@Length(min = 10, max = 100, message = "O campo NOME DO AUTOR deve conter entre 10 e 100 catacteres.")
 	private String nome_autor;
+	
+	@NotEmpty(message = "O campo TEXTO não deve ser vazio.")
+	@Length(min = 10, max = 100, message = "O campo TEXTO deve conter entre 10 e 100 catacteres.")
 	private String texto;
 
 	@JsonIgnore

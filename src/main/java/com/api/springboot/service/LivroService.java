@@ -3,12 +3,16 @@ package com.api.springboot.service;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.api.springboot.domain.Livro;
 import com.api.springboot.dtos.LivroDTO;
 import com.api.springboot.exceptions.ObjectNotFoundExceptions;
 import com.api.springboot.repository.LivroRepository;
 
+@Service
 public class LivroService {
+
 	@Autowired
 	private LivroRepository livroRepository;
 
