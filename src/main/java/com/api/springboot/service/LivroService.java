@@ -34,9 +34,10 @@ public class LivroService {
 
 	public Livro update(Integer id, LivroDTO objDTO) {
 		Livro obj = findById(id);
-		obj.setTitulo(objDTO.getTitulo());
 		obj.setNome_autor(objDTO.getNome_autor());
+		obj.setTexto(objDTO.getTexto());
 		obj.setTitulo(objDTO.getTitulo());
+
 		return livroRepository.save(obj);
 	}
 

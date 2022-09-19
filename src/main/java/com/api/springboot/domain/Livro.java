@@ -22,15 +22,15 @@ public class Livro implements Serializable {
 	private Integer id;
 
 	@NotEmpty(message = "O campo TITULO não deve ser vazio.")
-	@Length(min = 10, max = 100, message = "O campo TITULO deve conter entre 10 e 100 catacteres.")
+	@Length(min = 1, max = 100, message = "O campo TITULO deve conter entre 10 e 100 catacteres.")
 	private String titulo;
 	
 	@NotEmpty(message = "O campo NOME DO AUTOR não deve ser vazio.")
-	@Length(min = 10, max = 100, message = "O campo NOME DO AUTOR deve conter entre 10 e 100 catacteres.")
+	@Length(min = 1, max = 100, message = "O campo NOME DO AUTOR deve conter entre 10 e 100 catacteres.")
 	private String nome_autor;
 	
 	@NotEmpty(message = "O campo TEXTO não deve ser vazio.")
-	@Length(min = 10, max = 100, message = "O campo TEXTO deve conter entre 10 e 100 catacteres.")
+	@Length(min = 1, max = 100, message = "O campo TEXTO deve conter entre 10 e 100 catacteres.")
 	private String texto;
 
 	@JsonIgnore
